@@ -6,11 +6,11 @@ const clientId = 'c5056de7977df5a87a7a';
 const clientSecret = 'ed458460dffd61af55205e293a89fcfbe178a3b6';
 
 app.get('/', (req, res) => {
-  res.redirect(`https://github.com/login/oauth/authorize?client_id=${clientId}&scope=repo`);
+  res.redirect(`https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=http://localhost:3001/oauth-callback&scope=repo`);
 });
 
-app.listen(3000);
-console.log('App listening on port 3000');
+app.listen(3001);
+console.log('App listening on port 3001');
 
 const axios = require('axios');
 let token = null;
